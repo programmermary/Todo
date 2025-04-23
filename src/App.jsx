@@ -21,7 +21,7 @@ function App() {
   const handelSubmit = (e) => {
    const newTask = {text:input,
                     color:getRondomColor(),
-                    x:Math.floor(Math.random()*(window.innerWidth-100))
+                    x:Math.floor(Math.random()*(window.innerWidth-400))
                    }
     const newTasks = [...tasks , newTask]
     e.preventDefault()
@@ -74,8 +74,10 @@ function App() {
       className='cursor-pointer hover:text-red-500'
       />
     </Grid>
-   <div className='input bg-white h-1/2 w-1/2 flex justify-center gap-4'>
- <form onSubmit={handelSubmit} className='w-full h-full'> 
+   <div className='input bg-white h-1/2 w-1/2 flex  justify-center gap-4
+   '>
+   <form onSubmit={handelSubmit} className='w-full h-full flex 
+   '> 
  <input type="text"
            name='todo'
            value={input}
@@ -92,7 +94,11 @@ function App() {
            '
            />
  </form>
- <div className='savedValues mt-4 flex flex-col items-center w-1/2'>
+
+
+   </div>
+
+    <div className='savedValues mt-4 relative w-screen  '>
   {tasks.map((task, index) => (
    <motion.div
    key={index}
@@ -111,8 +117,6 @@ function App() {
  </motion.div>
   ))}
 </div>
-
-   </div>
     </div>
     </>
   )
